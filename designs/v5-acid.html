@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вариант 5 — Кислотный</title>
+<meta name="theme-color" content="#0c0c0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="assets/projects.js"></script>
+<style>
+:root{--bg:#0c0c0c;--tx:#f1f1ee;--mu:#8a8a85;--ln:#2a2a28;--ac:#d4ff3f;--pad:clamp(16px,3.5vw,48px);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.6 'JetBrains Mono',monospace;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.u{font-family:'Unbounded',sans-serif}
+.wrap{padding:0 var(--pad)}
+::selection{background:var(--ac);color:#000}
+main{overflow-x:clip}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+header .logo{font-family:'Unbounded';font-weight:800;font-size:16px;letter-spacing:0}
+header .logo sup{color:var(--ac)}
+header nav{display:flex;gap:26px}
+header nav a:hover,.brk:hover{color:var(--ac)}
+.brk:before{content:"[ "}.brk:after{content:" ]"}
+
+.hero{position:relative;padding:clamp(30px,6vw,70px) var(--pad) clamp(40px,6vw,80px)}
+.hero h1{margin:0;font-family:'Unbounded';font-weight:900;text-transform:uppercase;font-size:clamp(46px,12vw,200px);line-height:.98;letter-spacing:-.04em}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ac)}
+.hero h1 .l{display:block}
+.hero h1 .l:nth-child(2){padding-left:12vw}
+.hero-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px;margin-top:clamp(30px,5vw,60px);align-items:end}
+.hero-row p{margin:0;max-width:420px;color:#cfcfca}
+.hero-row .tag{color:var(--mu);font-size:12px;text-transform:uppercase}
+.hero-row .tag b{color:var(--ac);font-weight:600}
+.sticker{position:absolute;right:var(--pad);top:clamp(20px,4vw,50px);width:clamp(110px,13vw,170px);aspect-ratio:1;display:grid;place-items:center;transition:transform .4s var(--ease)}
+.sticker svg{position:absolute;inset:0;width:100%;height:100%;animation:rot 14s linear infinite}
+.sticker b{width:46%;aspect-ratio:1;border-radius:50%;background:var(--ac);color:#000;display:grid;place-items:center;font-size:clamp(22px,2.4vw,32px);font-weight:400;transition:transform .4s var(--ease)}
+.sticker:hover b{transform:rotate(-45deg) scale(1.08)}
+@keyframes rot{to{transform:rotate(360deg)}}
+
+.band{background:var(--ac);color:#000;transform:rotate(-2deg);margin:20px -20px;padding:16px 0;overflow:hidden;border-block:2px solid #000}
+.band .track{display:flex;width:max-content;animation:mq 22s linear infinite;font-family:'Unbounded';font-weight:800;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;white-space:nowrap}
+.band span{padding:0 22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section.s{padding:clamp(70px,9vw,120px) var(--pad)}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:20px;border-bottom:2px solid var(--tx);padding-bottom:18px;margin-bottom:0}
+.sec-h h2{margin:0;font-family:'Unbounded';font-weight:800;text-transform:uppercase;font-size:clamp(34px,5.6vw,84px);line-height:.95;letter-spacing:-.03em}
+.sec-h span{color:var(--mu);font-size:12px;text-transform:uppercase;text-align:right}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,6vw,90px);margin-top:36px}
+.about p.big{margin:0;font-family:'Unbounded';font-weight:400;font-size:clamp(20px,2.3vw,32px);line-height:1.3;letter-spacing:-.01em}
+.about p.big mark{background:var(--ac);color:#000;padding:0 .2em}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ln)}
+.skills div{padding:16px 0;border-bottom:1px solid var(--ln);display:flex;gap:14px}
+.skills div i{font-style:normal;color:var(--ac)}
+
+.row{display:grid;grid-template-columns:110px 1.1fr 1fr 260px 60px;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--ln);position:relative;transition:background .25s,color .25s,padding .4s var(--ease)}
+.row .n{font-family:'Unbounded';font-weight:800;font-size:clamp(28px,3vw,44px);color:var(--ac);transition:color .25s}
+.row h3{margin:0;font-family:'Unbounded';font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.02em;line-height:1}
+.row .ty{color:var(--mu);font-size:13px;text-transform:uppercase;transition:color .25s}
+.row .th{border-radius:6px;overflow:hidden;border:1px solid #ffffff1a;transform:rotate(0);transition:transform .5s var(--ease)}
+.row .ar{font-size:30px;justify-self:end;transition:transform .4s var(--ease)}
+.row:hover{background:var(--ac);color:#000;padding-inline:18px}
+.row:hover .n,.row:hover .ty{color:#000}
+.row:hover .th{transform:rotate(-3deg) scale(1.04)}
+.row:hover .ar{transform:rotate(-45deg)}
+.row .live{display:inline-block;margin-left:10px;font-size:11px;padding:2px 8px;border:1px solid currentColor;border-radius:99px;vertical-align:middle}
+
+.contact{background:var(--ac);color:#000;padding:clamp(60px,9vw,130px) var(--pad);position:relative;overflow:hidden}
+.contact h2{margin:0;font-family:'Unbounded';font-weight:900;text-transform:uppercase;font-size:clamp(44px,9vw,150px);line-height:.9;letter-spacing:-.04em}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:clamp(36px,5vw,64px);align-items:end}
+.contact .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.btn{display:inline-flex;align-items:center;gap:12px;height:60px;padding:0 28px;border-radius:999px;background:#000;color:var(--ac);font-family:'Unbounded';font-weight:600;font-size:15px;text-transform:uppercase;transition:transform .35s var(--ease)}
+.btn:hover{transform:scale(1.05) rotate(-1.5deg)}
+.btn.out{background:transparent;color:#000;border:2px solid #000}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:22px var(--pad) 36px;font-size:12px;color:var(--mu);text-transform:uppercase}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.row.rv{transition:opacity .8s var(--ease),transform .8s var(--ease),background .25s,color .25s,padding .4s var(--ease)}
+@media (max-width:900px){header nav{display:none}.hero-row,.about,.contact .grid{grid-template-columns:1fr}.row{grid-template-columns:56px 1fr 40px;gap:14px}.row .ty{grid-column:2}.row .th{grid-column:1/-1;grid-row:3}.contact .btns{justify-content:flex-start}.sticker{position:relative;right:auto;top:auto;margin:-10px 0 20px auto}}
+@media (max-width:600px){.skills{grid-template-columns:1fr}.hero h1 .l:nth-child(2){padding-left:0}.hero h1 .o{-webkit-text-stroke-width:1.5px}.btn{width:100%;justify-content:center}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">PROHORUS<sup>®</sup></a>
+  <nav><a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#contact">Контакт</a></nav>
+  <a class="brk js-tg" target="_blank" rel="noopener">Написать</a>
+</header>
+
+<main>
+  <section class="hero">
+    <a class="sticker js-tg" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+      <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+        <text font-family="Unbounded" font-weight="600" font-size="17" letter-spacing="5" fill="#f1f1ee"><textPath href="#c">НАПИШИ МНЕ ✦ НАПИШИ МНЕ ✦ НАПИШИ МНЕ ✦</textPath></text></svg>
+      <b>↗</b>
+    </a>
+    <h1><span class="l">Делаю</span><span class="l o">сайты</span><span class="l">под ключ</span></h1>
+    <div class="hero-row">
+      <p>Привет! Я веб-разработчик. Придумываю, рисую и запускаю сайты, которые <span style="color:var(--ac)">не выглядят как шаблон</span>.</p>
+      <div class="tag"><b>[01]</b> Лендинги<br><b>[02]</b> Сайты-витрины<br><b>[03]</b> Запуск и хостинг</div>
+      <div class="tag" style="text-align:right">● Беру новые проекты<br>Работаю удалённо</div>
+    </div>
+  </section>
+
+  <div class="band"><div class="track" id="band"></div></div>
+
+  <section class="s" id="about">
+    <div class="sec-h rv"><h2>Обо мне</h2><span>Коротко<br>и по делу</span></div>
+    <div class="about">
+      <p class="big rv">Веду проект <mark>от идеи до запуска</mark> — без посредников и долгих согласований. Вы общаетесь напрямую с тем, кто делает сайт.</p>
+      <div class="skills rv" style="--d:.1s">
+        <div><i>→</i>Дизайн под бренд</div><div><i>→</i>Адаптив под телефон</div>
+        <div><i>→</i>Анимации и эффекты</div><div><i>→</i>Быстрая загрузка</div>
+        <div><i>→</i>Базовое SEO</div><div><i>→</i>Домен и хостинг</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="works" style="padding-top:0">
+    <div class="sec-h rv"><h2>Работы</h2><span>Витрины на разные темы<br>(06)</span></div>
+    <div id="rows"></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="rv">Есть идея?<br>Давай обсудим</h2>
+    <div class="grid">
+      <p class="rv" style="margin:0;max-width:420px;font-size:16px">Напиши пару слов о бизнесе — предложу решение, сроки и стоимость. Почта: <a class="js-mail" style="text-decoration:underline"></a></p>
+      <div class="btns rv"><a class="btn js-tg" target="_blank" rel="noopener">Telegram ↗</a><a class="btn out js-mailbtn">Почта</a></div>
+    </div>
+  </section>
+</main>
+<footer><span>© PROHORUS — сайты под ключ</span><a href="#">Наверх ↑</a></footer>
+
+<script>
+document.querySelectorAll('.js-tg').forEach(a=>a.href=tgLink());
+const m=document.querySelector('.js-mail');m.textContent=SITE.email;m.href='mailto:'+SITE.email;
+document.querySelector('.js-mailbtn').href='mailto:'+SITE.email;
+const words=['Лендинги','✦','Каталоги','✦','Сайты-визитки','✦','Адаптив','✦','Анимации','✦','Запуск','✦'];
+document.getElementById('band').innerHTML=[...words,...words,...words,...words].map(w=>`<span>${w}</span>`).join('');
+document.getElementById('rows').innerHTML=PROJECTS.map((p,i)=>`
+  <a class="row rv" href="${p.url}" ${p.live?'target="_blank" rel="noopener"':''}>
+    <span class="n">0${i+1}</span>
+    <h3>${p.name}${p.live?'<span class="live u">online</span>':''}</h3>
+    <span class="ty">${p.type}${p.live?'':' · скоро'}</span>
+    <div class="th">${renderThumb(p)}</div>
+    <span class="ar">→</span>
+  </a>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вариант 3 — Журнальный</title>
+<meta name="theme-color" content="#f2efe9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="assets/projects.js"></script>
+<style>
+:root{--bg:#f2efe9;--ink:#151413;--mu:#6d685f;--ln:#15141324;--ac:#c8461e;--pad:clamp(16px,4vw,56px);--ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 'Inter Tight',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{padding:0 var(--pad);max-width:1600px;margin:0 auto}
+.cap{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+
+header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;border-bottom:1px solid var(--ln)}
+header nav{display:flex;gap:28px;justify-content:center;font-size:14px}
+header nav a{position:relative}
+header nav a:after,.ul:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+header nav a:hover:after,.ul:hover:after{transform:scaleX(1);transform-origin:left}
+.logo{font-size:26px;font-weight:600;font-style:italic;letter-spacing:-.01em}
+header .right{text-align:right;font-size:14px}
+
+.hero{padding-block:clamp(48px,8vw,110px) clamp(40px,6vw,80px)}
+.hero h1{margin:0;font-size:clamp(56px,10.5vw,176px);line-height:.9;font-weight:500;letter-spacing:-.035em}
+.hero h1 em{font-style:italic;color:var(--ac)}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.2s var(--ease)}
+.loaded .hero h1 .ln>span{transform:none}
+.hero-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,64px);margin-top:clamp(40px,6vw,80px);padding-top:22px;border-top:1px solid var(--ln)}
+.hero-foot p{margin:8px 0 0;font-size:17px;max-width:360px}
+.ul{position:relative;display:inline-block}
+.arrow-btn{display:inline-flex;align-items:center;gap:12px;margin-top:12px;font-size:17px;font-weight:500}
+.arrow-btn b{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:400;transition:transform .5s var(--ease),background .3s}
+.arrow-btn:hover b{transform:rotate(-45deg);background:var(--ac)}
+
+.works{padding-block:clamp(48px,7vw,96px)}
+.works-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.works-head h2{margin:0;font-size:clamp(40px,5vw,76px);font-weight:500;letter-spacing:-.03em;line-height:1}
+.works-head h2 sup{font-family:'Inter Tight';font-size:.28em;vertical-align:top;margin-left:8px;color:var(--mu);letter-spacing:0}
+.list{border-top:1px solid var(--ink)}
+.item{display:grid;grid-template-columns:70px 1.6fr 1fr 120px 40px;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--ln);position:relative;transition:padding .6s var(--ease),color .3s}
+.item .n{font-size:13px;color:var(--mu);font-variant-numeric:tabular-nums}
+.item h3{margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,54px);font-weight:500;letter-spacing:-.02em;line-height:1}
+.item .ty{color:var(--mu)}
+.item .st{font-size:13px}
+.item .st.live{color:var(--ac)}
+.item .ar{font-size:22px;transition:transform .5s var(--ease)}
+.item:hover{padding-left:18px}
+.item:hover .ar{transform:translateX(6px) rotate(-45deg)}
+.item .mth{display:none}
+.float{position:fixed;left:0;top:0;width:360px;border-radius:10px;overflow:hidden;pointer-events:none;z-index:30;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(-3deg);transition:opacity .35s,transform .5s var(--ease);box-shadow:0 30px 60px -20px #15141366}
+.float.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+
+.contact{padding-block:clamp(60px,9vw,130px);border-top:1px solid var(--ln);text-align:center}
+.contact .cap{display:block;margin-bottom:22px}
+.contact a.big{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,9vw,150px);font-style:italic;font-weight:500;line-height:1;letter-spacing:-.03em;position:relative;display:inline-block}
+.contact a.big:after{height:3px;bottom:2px}
+.contact .links{display:flex;justify-content:center;gap:clamp(18px,4vw,48px);margin-top:36px;flex-wrap:wrap;font-size:17px}
+footer .wrap{display:flex;justify-content:space-between;padding:26px var(--pad) 40px;border-top:1px solid var(--ln);font-size:13px;color:var(--mu);flex-wrap:wrap;gap:12px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.item.rv{transition:opacity 1s var(--ease),transform 1s var(--ease),padding .6s var(--ease)}
+@media (max-width:900px){header .wrap{grid-template-columns:1fr auto}header nav{display:none}.hero-foot{grid-template-columns:1fr}.item{grid-template-columns:44px 1fr 30px}.item .ty,.item .st{display:none}.item .mth{display:block;grid-column:2/4;border-radius:8px;overflow:hidden;margin-top:6px}.float{display:none}.hint{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln>span{transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo serif" href="#">Prohorus</a>
+  <nav><a href="#works">Работы</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav>
+  <div class="right"><a class="ul js-tg" target="_blank" rel="noopener">Написать ↗</a></div>
+</div></header>
+
+<main>
+  <section class="hero wrap">
+    <div class="cap" style="margin-bottom:28px">Веб-разработчик — сайты под ключ</div>
+    <h1 class="serif">
+      <span class="ln"><span>Сайты <em>с характером</em></span></span>
+      <span class="ln"><span style="transition-delay:.1s">для живого</span></span>
+      <span class="ln"><span style="transition-delay:.2s">бизнеса.</span></span>
+    </h1>
+    <div class="hero-foot" id="about">
+      <div class="rv"><div class="cap">Что я делаю</div><p>Лендинги, сайты-визитки и каталоги — с продуманным дизайном и аккуратной вёрсткой.</p></div>
+      <div class="rv" style="--d:.1s"><div class="cap">Как работаю</div><p>Сам веду проект от идеи до запуска: структура, дизайн, код, хостинг.</p></div>
+      <div class="rv" style="--d:.2s"><div class="cap">Связь</div><a class="arrow-btn js-tg" target="_blank" rel="noopener"><b>→</b>Обсудить проект</a></div>
+    </div>
+  </section>
+
+  <section class="works wrap" id="works">
+    <div class="works-head rv"><h2 class="serif">Избранные работы<sup>(06)</sup></h2><span class="cap hint">Наведите на строку</span></div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <span class="cap rv">Есть идея для сайта?</span>
+    <a class="big ul js-tg rv" target="_blank" rel="noopener">Напишите мне</a>
+    <div class="links rv"><a class="ul js-tg js-nick" target="_blank" rel="noopener"></a><a class="ul js-mail"></a></div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© Prohorus — дизайн и разработка сайтов</span><a href="#">Наверх ↑</a></div></footer>
+<div class="float" id="float"></div>
+
+<script>
+document.querySelectorAll('.js-tg').forEach(a=>a.href=tgLink());
+document.querySelector('.js-nick').textContent='Telegram @'+SITE.telegram;
+const m=document.querySelector('.js-mail');m.textContent=SITE.email;m.href='mailto:'+SITE.email;
+
+const list=document.getElementById('list');
+list.innerHTML=PROJECTS.map((p,i)=>`
+  <a class="item rv" data-i="${i}" href="${p.url}" ${p.live?'target="_blank" rel="noopener"':''}>
+    <span class="n">0${i+1}</span><h3>${p.name}</h3><span class="ty">${p.type}</span>
+    <span class="st ${p.live?'live':''}">${p.live?'● Онлайн':'В работе'}</span><span class="ar">→</span>
+    <div class="mth">${renderThumb(p)}</div>
+  </a>`).join('');
+
+const fl=document.getElementById('float');let fx=0,fy=0,cx=0,cy=0;
+list.querySelectorAll('.item').forEach(it=>{
+  it.addEventListener('mouseenter',()=>{fl.innerHTML=renderThumb(PROJECTS[it.dataset.i]);fl.classList.add('on')});
+  it.addEventListener('mouseleave',()=>fl.classList.remove('on'));
+});
+addEventListener('pointermove',e=>{fx=e.clientX+190;fy=e.clientY});
+(function loop(){cx+=(fx-cx)*.14;cy+=(fy-cy)*.14;fl.style.left=cx+'px';fl.style.top=cy+'px';requestAnimationFrame(loop)})();
+
+setTimeout(()=>document.body.classList.add('loaded'),60);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach((el,i)=>{if(el.classList.contains('item'))el.style.setProperty('--d',(i%6)*.06+'s');io.observe(el)});
+</script>
+</body>
+</html>

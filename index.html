@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prohorus — разработка сайтов под ключ</title>
+<meta name="description" content="Веб-разработчик: лендинги, сайты-визитки и каталоги для бизнеса. Дизайн, вёрстка и запуск — от идеи до работающего сайта.">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Prohorus — разработка сайтов под ключ">
+<meta property="og:description" content="Лендинги, сайты-визитки и каталоги для бизнеса. Посмотрите витрины проектов.">
+<meta property="og:url" content="http://46.173.26.176:8080/">
+<meta property="og:image" content="http://46.173.26.176:8080/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="assets/projects.js"></script>
+<style>
+:root{--bg:#0c0c0c;--tx:#f1f1ee;--mu:#8a8a85;--ln:#2a2a28;--ac:#d4ff3f;--pad:clamp(16px,3.5vw,48px);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.6 'JetBrains Mono',monospace;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+button{font:inherit;text-transform:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.u{font-family:'Unbounded',sans-serif}
+::selection{background:var(--ac);color:#000}
+main{overflow-x:clip}
+section{scroll-margin-top:64px}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+
+/* шапка */
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);font-size:13px;text-transform:uppercase;letter-spacing:.06em;transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent}
+header.sc{background:#0c0c0ccc;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-block:12px;border-color:#ffffff12}
+.logo{font-family:'Unbounded';font-weight:800;font-size:16px;letter-spacing:0}
+.logo sup{color:var(--ac)}
+header nav{display:flex;gap:26px}
+header nav a,.brk{position:relative;transition:color .2s}
+header nav a:hover,.brk:hover{color:var(--ac)}
+.brk:before{content:"[ "}.brk:after{content:" ]"}
+.burger{display:none}
+
+/* мобильное меню */
+.mnu{position:fixed;inset:0;z-index:60;background:var(--ac);color:#000;padding:18px var(--pad) 32px;display:flex;flex-direction:column;clip-path:circle(0% at calc(100% - 40px) 30px);transition:clip-path .7s var(--ease);visibility:hidden}
+.mnu.open{clip-path:circle(150% at calc(100% - 40px) 30px);visibility:visible}
+.mnu .top{display:flex;justify-content:space-between;align-items:center;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.mnu nav{display:flex;flex-direction:column;gap:6px;margin:auto 0}
+.mnu nav a{font-family:'Unbounded';font-weight:900;font-size:clamp(40px,12vw,72px);text-transform:uppercase;line-height:1.05;letter-spacing:-.03em}
+.mnu .logo sup{color:#000}.mnu .brk:hover,.mnu a:hover{color:#000;text-decoration:underline;text-underline-offset:4px}
+.mnu .bot{font-size:13px;display:flex;flex-direction:column;gap:6px}
+
+/* первый экран */
+.hero{position:relative;padding:clamp(110px,13vw,150px) var(--pad) clamp(40px,6vw,80px)}
+.hero h1{margin:0;font-family:'Unbounded';font-weight:900;text-transform:uppercase;font-size:clamp(46px,12vw,200px);line-height:.98;letter-spacing:-.04em}
+.hero h1 .l{display:block;overflow:hidden;padding-top:.06em;margin-top:-.06em}
+.hero h1 .l>span{display:inline-block;transform:translateY(110%);transition:transform 1.1s var(--ease)}
+.ready .hero h1 .l>span{transform:none}
+.hero h1 .l:nth-child(2)>span{transition-delay:.08s}.hero h1 .l:nth-child(3)>span{transition-delay:.16s}
+.hero h1 .l:nth-child(2){padding-left:12vw}
+.hero h1 .o{color:var(--bg);-webkit-text-stroke:4px var(--ac);paint-order:stroke fill;transition:color .6s var(--ease),transform 1.1s var(--ease)}
+.hero h1 .o:hover{color:var(--ac)}
+.hero-row{display:grid;grid-template-columns:1.6fr 1fr .8fr;gap:28px;margin-top:clamp(30px,5vw,60px);align-items:end}
+.hero-row p{margin:0;max-width:430px;color:#cfcfca;font-size:16px}
+.hero-row .tag{color:var(--mu);font-size:12px;text-transform:uppercase;line-height:1.9}
+.hero-row .tag b{color:var(--ac);font-weight:600}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ac);margin-right:8px;box-shadow:0 0 0 0 #d4ff3f88;animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px #d4ff3f00}100%{box-shadow:0 0 0 0 #d4ff3f00}}
+.sticker{position:absolute;right:var(--pad);top:clamp(96px,10vw,130px);width:clamp(110px,13vw,170px);aspect-ratio:1;display:grid;place-items:center;z-index:2}
+.sticker svg{position:absolute;inset:0;width:100%;height:100%;animation:rot 14s linear infinite}
+.sticker:hover svg{animation-duration:4s}
+.sticker b{width:46%;aspect-ratio:1;border-radius:50%;background:var(--ac);color:#000;display:grid;place-items:center;font-size:clamp(22px,2.4vw,32px);font-weight:400;transition:transform .4s var(--ease)}
+.sticker:hover b{transform:rotate(-45deg) scale(1.1)}
+@keyframes rot{to{transform:rotate(360deg)}}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:56px;padding:0 26px;border-radius:999px;background:var(--ac);color:#000;font-family:'Unbounded';font-weight:600;font-size:14px;text-transform:uppercase;transition:transform .35s var(--ease),background .25s,color .25s}
+.btn:hover{transform:scale(1.05) rotate(-1.5deg)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--tx);border:1.5px solid #ffffff40}
+.btn.ghost:hover{border-color:var(--ac);color:var(--ac)}
+.btn.dark{background:#000;color:var(--ac)}
+.btn.out{background:transparent;color:#000;border:2px solid #000}
+
+/* ленты */
+.bands{position:relative;height:clamp(150px,16vw,220px);margin:10px 0}
+.band{position:absolute;left:-40px;right:-40px;top:50%;padding:14px 0;overflow:hidden;border-block:2px solid #000}
+.band.a{background:var(--ac);color:#000;transform:translateY(-50%) rotate(-3deg);z-index:2}
+.band.b{background:#161615;color:#161615;-webkit-text-stroke:2.4px #d4ff3f;paint-order:stroke fill;transform:translateY(-50%) rotate(2.5deg);border-color:#262624}
+.band .track{display:flex;width:max-content;animation:mq 26s linear infinite;font-family:'Unbounded';font-weight:800;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;white-space:nowrap}
+.band.b .track{animation-direction:reverse;animation-duration:32s}
+.band span{padding:0 22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* разделы */
+section.s{padding:clamp(70px,9vw,120px) var(--pad)}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:20px;border-bottom:2px solid var(--tx);padding-bottom:18px}
+.sec-h h2{margin:0;font-family:'Unbounded';font-weight:800;text-transform:uppercase;font-size:clamp(34px,5.6vw,84px);line-height:.95;letter-spacing:-.03em}
+.sec-h span{color:var(--mu);font-size:12px;text-transform:uppercase;text-align:right}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,6vw,90px);margin-top:36px}
+.about p.big{margin:0;font-family:'Unbounded';font-weight:400;font-size:clamp(20px,2.3vw,32px);line-height:1.3;letter-spacing:-.01em}
+.about p.big mark{background:var(--ac);color:#000;padding:0 .2em}
+.skills{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ln)}
+.skills div{padding:16px 0;border-bottom:1px solid var(--ln);display:flex;gap:14px;transition:padding .35s var(--ease),color .2s}
+.skills div:hover{padding-left:8px;color:var(--ac)}
+.skills div i{font-style:normal;color:var(--ac)}
+
+.row{display:grid;grid-template-columns:110px 1.1fr 1fr 250px 60px;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--ln);position:relative}
+.row .n{font-family:'Unbounded';font-weight:800;font-size:clamp(28px,3vw,44px);color:var(--ac);transition:color .25s}
+.row h3{margin:0;font-family:'Unbounded';font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.02em;line-height:1.05}
+.row .ty{color:var(--mu);font-size:13px;text-transform:uppercase;transition:color .25s}
+.row .th{border-radius:6px;overflow:hidden;border:1px solid #ffffff1a;transition:transform .5s var(--ease)}
+.row .ar{font-size:30px;justify-self:end;transition:transform .4s var(--ease)}
+.row:hover{background:var(--ac);color:#000;padding-inline:18px}
+.row:hover .n,.row:hover .ty{color:#000}
+.row:hover .th{transform:rotate(-3deg) scale(1.04)}
+.row:hover .ar{transform:rotate(-45deg)}
+.row .live{display:inline-block;margin-left:10px;font-size:11px;padding:2px 8px;border:1px solid currentColor;border-radius:99px;vertical-align:middle;font-family:'Unbounded';font-weight:600;letter-spacing:.02em}
+.row.yours{border-bottom-style:dashed}
+.row.yours .n{color:var(--bg);-webkit-text-stroke:3px var(--ac);paint-order:stroke fill;transition:color .25s}
+.row.yours:hover .n{color:var(--ac);-webkit-text-stroke-color:#000}
+.row.yours .ph{height:100%;min-height:120px;border:1.5px dashed #ffffff30;border-radius:6px;display:grid;place-items:center;font-size:12px;color:var(--mu);text-transform:uppercase;transition:border-color .25s,color .25s}
+.row.yours:hover .ph{border-color:#000;color:#000}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px);margin-top:36px}
+.step{border-top:3px solid var(--ac);padding-top:22px}
+.step .num{font-family:'Unbounded';font-weight:900;font-size:clamp(46px,5vw,76px);line-height:1;color:var(--bg);-webkit-text-stroke:3px var(--ac);paint-order:stroke fill}
+.step h3{margin:18px 0 10px;font-family:'Unbounded';font-weight:800;text-transform:uppercase;font-size:clamp(18px,1.7vw,24px)}
+.step p{margin:0;color:#bdbdb8;max-width:360px}
+
+.contact{background:var(--ac);color:#000;padding:clamp(60px,9vw,130px) var(--pad);position:relative;overflow:hidden}
+.contact h2{margin:0;font-family:'Unbounded';font-weight:900;text-transform:uppercase;font-size:clamp(40px,8.6vw,150px);line-height:.92;letter-spacing:-.04em}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:clamp(36px,5vw,64px);align-items:end}
+.contact p{margin:0 0 18px;max-width:440px;font-size:16px}
+.nick{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nick a{font-family:'Unbounded';font-weight:800;font-size:clamp(24px,3vw,40px);letter-spacing:-.02em;word-break:break-all}
+.nick button{font-size:12px;text-transform:uppercase;border:1.5px solid #000;border-radius:99px;padding:7px 14px;transition:background .2s,color .2s}
+.nick button:hover{background:#000;color:var(--ac)}
+.contact .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+
+footer{padding:clamp(40px,6vw,70px) var(--pad) 30px;overflow:hidden}
+.wordmark{font-family:'Unbounded';font-weight:900;font-size:15.4vw;line-height:.8;letter-spacing:-.05em;color:var(--bg);-webkit-text-stroke:3px #3a3a37;paint-order:stroke fill;white-space:nowrap;margin:0 0 28px -.04em;transition:-webkit-text-stroke-color .4s}
+.wordmark:hover{-webkit-text-stroke-color:var(--ac)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;font-size:12px;color:var(--mu);text-transform:uppercase}
+.foot div{display:flex;gap:22px;flex-wrap:wrap}
+.foot a:hover{color:var(--ac)}
+
+/* курсор */
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--ac);pointer-events:none;z-index:200;mix-blend-mode:difference;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),opacity .3s;opacity:0}
+.cur.on{opacity:1}
+.cur.big{width:56px;height:56px;margin:-28px 0 0 -28px}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.row.rv{transition:opacity .8s var(--ease),transform .8s var(--ease),background .25s,color .25s,padding .4s var(--ease);transition-delay:var(--d,0s),var(--d,0s),0s,0s,0s}
+
+@media (pointer:fine){body,a,button{cursor:none}}
+@media (max-width:900px){
+  header nav,header>.brk{display:none}header>.burger{display:block}
+  .hero-row,.about,.contact .grid,.steps{grid-template-columns:1fr}
+  .row{grid-template-columns:56px 1fr 40px;gap:8px 14px}.row .ty{grid-column:2}.row .th,.row .ph{grid-column:1/-1;grid-row:3;margin-top:8px}
+  .row.yours .ph{min-height:80px}
+  .contact .btns{justify-content:flex-start}
+  .sticker{position:relative;right:auto;top:auto;margin:-40px 0 16px auto}
+}
+@media (max-width:600px){
+  .skills{grid-template-columns:1fr}.hero h1 .l:nth-child(2){padding-left:0}.hero h1 .o{-webkit-text-stroke-width:3px}
+  .btn{width:100%}.hero .ctas{flex-direction:column}
+  .sec-h span{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}.hero h1 .l>span{transform:none}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="#top">PROHORUS<sup>®</sup></a>
+  <nav><a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#process">Как работаем</a><a href="#contact">Контакт</a></nav>
+  <a class="brk js-tg" target="_blank" rel="noopener">Написать</a>
+  <button class="burger brk" id="burger" aria-expanded="false" aria-controls="mnu">Меню</button>
+</header>
+
+<div class="mnu" id="mnu" aria-hidden="true">
+  <div class="top"><span class="logo">PROHORUS<sup>®</sup></span><button class="brk" id="close">Закрыть</button></div>
+  <nav><a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#process">Этапы</a><a href="#contact">Контакт</a></nav>
+  <div class="bot"><a class="js-tg js-nick" target="_blank" rel="noopener"></a><a class="js-mail"></a></div>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <a class="sticker js-tg" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+        <text font-family="Unbounded" font-weight="600" font-size="15" fill="#f1f1ee"><textPath href="#c" textLength="486" lengthAdjust="spacing">НАПИШИТЕ МНЕ ✦ НАПИШИТЕ МНЕ ✦</textPath></text></svg>
+      <b>↗</b>
+    </a>
+    <h1 aria-label="Делаю сайты под ключ"><span class="l"><span>Делаю</span></span><span class="l"><span class="o">сайты</span></span><span class="l"><span>под ключ</span></span></h1>
+    <div class="hero-row">
+      <div>
+        <p>Привет! Я веб-разработчик. Придумываю, рисую и запускаю сайты, которые <span style="color:var(--ac)">не выглядят как шаблон</span>.</p>
+        <div class="ctas"><a class="btn" href="#works">Смотреть работы ↓</a><a class="btn ghost js-tg" target="_blank" rel="noopener">Обсудить проект</a></div>
+      </div>
+      <div class="tag"><b>[01]</b> Лендинги<br><b>[02]</b> Сайты-витрины и каталоги<br><b>[03]</b> Запуск и хостинг</div>
+      <div class="tag" style="text-align:right"><span class="live-dot"></span>Беру новые проекты<br>Работаю удалённо</div>
+    </div>
+  </section>
+
+  <div class="bands" aria-hidden="true">
+    <div class="band b"><div class="track" id="bandB"></div></div>
+    <div class="band a"><div class="track" id="bandA"></div></div>
+  </div>
+
+  <section class="s" id="about">
+    <div class="sec-h rv"><h2>Обо мне</h2><span>Коротко<br>и по делу</span></div>
+    <div class="about">
+      <p class="big rv">Веду проект <mark>от идеи до запуска</mark> — без посредников и долгих согласований. Вы общаетесь напрямую с тем, кто делает сайт.</p>
+      <div class="skills rv" style="--d:.1s">
+        <div><i>→</i>Дизайн под бренд</div><div><i>→</i>Адаптив под телефон</div>
+        <div><i>→</i>Анимации и эффекты</div><div><i>→</i>Быстрая загрузка</div>
+        <div><i>→</i>Базовое SEO</div><div><i>→</i>Домен и хостинг</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="works" style="padding-top:0">
+    <div class="sec-h rv"><h2>Работы</h2><span>Витрины на разные темы<br>(<span id="cnt"></span>)</span></div>
+    <div id="rows"></div>
+  </section>
+
+  <section class="s" id="process" style="padding-top:0">
+    <div class="sec-h rv"><h2>Как работаем</h2><span>Три шага<br>до запуска</span></div>
+    <div class="steps">
+      <div class="step rv"><div class="num">01</div><h3>Знакомимся</h3><p>Рассказываете о бизнесе и задаче. Предлагаю структуру и стиль сайта.</p></div>
+      <div class="step rv" style="--d:.1s"><div class="num">02</div><h3>Делаю сайт</h3><p>Дизайн и вёрстка. Показываю промежуточный результат, вносим правки.</p></div>
+      <div class="step rv" style="--d:.2s"><div class="num">03</div><h3>Запускаем</h3><p>Размещаю сайт на хостинге и подключаю домен — он начинает работать.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="rv">Есть идея?<br>Давайте обсудим</h2>
+    <div class="grid">
+      <div class="rv">
+        <p>Напишите пару слов о бизнесе — предложу решение, сроки и стоимость.</p>
+        <div class="nick"><a class="js-tg js-nick" target="_blank" rel="noopener"></a><button id="copy">Скопировать</button></div>
+      </div>
+      <div class="btns rv" style="--d:.1s"><a class="btn dark js-tg" target="_blank" rel="noopener">Telegram ↗</a><a class="btn out js-mailbtn">Почта</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wordmark" aria-hidden="true">PROHORUS</div>
+  <div class="foot">
+    <span>© <span id="yr"></span> Prohorus — сайты под ключ</span>
+    <div><a class="js-tg" target="_blank" rel="noopener">Telegram</a><a class="js-mail"></a><a href="#top">Наверх ↑</a></div>
+  </div>
+</footer>
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<script>
+/* контакты из assets/projects.js */
+document.querySelectorAll('.js-tg').forEach(a=>a.href=tgLink());
+document.querySelectorAll('.js-nick').forEach(a=>a.textContent='@'+SITE.telegram);
+document.querySelectorAll('.js-mail').forEach(a=>{a.textContent=SITE.email;a.href='mailto:'+SITE.email});
+document.querySelector('.js-mailbtn').href='mailto:'+SITE.email;
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('copy').onclick=e=>{const b=e.currentTarget;navigator.clipboard&&navigator.clipboard.writeText('@'+SITE.telegram);b.textContent='Скопировано ✓';setTimeout(()=>b.textContent='Скопировать',1600)};
+
+/* ленты */
+const wa=['Лендинги','✦','Каталоги','✦','Сайты-визитки','✦','Адаптив','✦','Анимации','✦','Запуск','✦'];
+const wb=['Кофейни','✦','Клиники','✦','Барбершопы','✦','Фитнес','✦','Мебель','✦','Ремонт','✦'];
+const fill=(id,w)=>document.getElementById(id).innerHTML=[...w,...w,...w,...w].map(x=>`<span>${x}</span>`).join('');
+fill('bandA',wa);fill('bandB',wb);
+
+/* работы */
+const pad=n=>String(n).padStart(2,'0');
+document.getElementById('cnt').textContent=pad(PROJECTS.length);
+document.getElementById('rows').innerHTML=PROJECTS.map((p,i)=>`
+  <a class="row rv" href="${p.url}" ${p.live?'target="_blank" rel="noopener"':''}>
+    <span class="n">${pad(i+1)}</span>
+    <h3>${p.name}${p.live?'<span class="live">online</span>':''}</h3>
+    <span class="ty">${p.type}${p.live?'':' · скоро'}</span>
+    <div class="th">${renderThumb(p)}</div>
+    <span class="ar">→</span>
+  </a>`).join('')+`
+  <a class="row yours rv js-tg" target="_blank" rel="noopener">
+    <span class="n">${pad(PROJECTS.length+1)}</span>
+    <h3>Ваш проект</h3>
+    <span class="ty">Здесь может быть ваш сайт</span>
+    <div class="ph">Обсудить →</div>
+    <span class="ar">→</span>
+  </a>`;
+document.querySelector('.row.yours').href=tgLink();
+
+/* появление */
+setTimeout(()=>document.body.classList.add('ready'),80);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach((el,i)=>{if(el.classList.contains('row'))el.style.setProperty('--d',(i%3)*.06+'s');io.observe(el)});
+
+/* шапка при прокрутке + ленты ускоряются от скорости прокрутки */
+const hdr=document.getElementById('hdr');let lastY=scrollY,slow;
+addEventListener('scroll',()=>{
+  hdr.classList.toggle('sc',scrollY>20);
+  const v=Math.min(Math.abs(scrollY-lastY)/6,5);lastY=scrollY;
+  document.querySelectorAll('.band .track').forEach(t=>t.getAnimations().forEach(a=>{a.playbackRate=1+v}));
+  clearTimeout(slow);slow=setTimeout(()=>document.querySelectorAll('.band .track').forEach(t=>t.getAnimations().forEach(a=>a.playbackRate=1)),160);
+},{passive:true});
+
+/* мобильное меню */
+const mnu=document.getElementById('mnu'),bg=document.getElementById('burger');
+function menu(o){mnu.classList.toggle('open',o);mnu.setAttribute('aria-hidden',!o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+bg.onclick=()=>menu(true);document.getElementById('close').onclick=()=>menu(false);
+mnu.querySelectorAll('nav a').forEach(a=>a.onclick=()=>menu(false));
+addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
+
+/* курсор */
+if(matchMedia('(pointer:fine)').matches){
+  const c=document.getElementById('cur');
+  addEventListener('pointermove',e=>{c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;c.classList.add('on')});
+  document.addEventListener('pointerover',e=>c.classList.toggle('big',!!e.target.closest('a,button')));
+  document.addEventListener('pointerleave',()=>c.classList.remove('on'));
+}
+</script>
+</body>
+</html>

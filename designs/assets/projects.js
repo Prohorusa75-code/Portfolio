@@ -1,0 +1,94 @@
+/* Общие данные для всех вариантов лендинга.
+   Здесь меняем контакты и список сайтов-витрин — все 5 дизайнов подхватят изменения. */
+
+window.SITE = {
+  brand: 'Prohorus',              // заглушка: имя или название студии
+  role: 'Веб-разработчик',
+  telegram: 'username',           // ник в Telegram без @
+  email: 'hello@yourdomain.ru',
+  whatsapp: '79000000000'         // номер без + и пробелов
+};
+
+window.PROJECTS = [
+  {
+    id: 'mebel', name: 'Мебель на заказ', type: 'Сайт-каталог', logo: 'Мебель',
+    headline: 'Кухни и шкафы по вашим размерам', cta: 'Рассчитать',
+    url: 'http://46.173.26.176', live: true,
+    t: { bg: 'linear-gradient(135deg,#2a1c13,#6b4a2f)', fg: '#f6eadb', ac: '#e8c39e', ff: "'Cormorant Garamond',serif", shape: 'arch' }
+  },
+  {
+    id: 'coffee', name: 'Кофейня', type: 'Лендинг + меню', logo: 'Зерно',
+    headline: 'Кофе, который хочется повторить', cta: 'Меню',
+    url: '#', live: false,
+    t: { bg: 'linear-gradient(160deg,#f4ead9,#e6d3b8)', fg: '#3b2416', ac: '#c0703a', ff: "'Playfair Display',serif", shape: 'cup' }
+  },
+  {
+    id: 'dental', name: 'Стоматология', type: 'Сайт клиники', logo: 'Дента+',
+    headline: 'Улыбка без страха и боли', cta: 'Записаться',
+    url: '#', live: false,
+    t: { bg: 'linear-gradient(150deg,#effafc,#d4eef3)', fg: '#0e3a4a', ac: '#13a3b5', ff: "'Manrope',sans-serif", shape: 'blob' }
+  },
+  {
+    id: 'fitness', name: 'Фитнес-студия', type: 'Лендинг', logo: 'PULSE',
+    headline: 'Тренируйся с удовольствием', cta: 'Пробное',
+    url: '#', live: false,
+    t: { bg: 'linear-gradient(140deg,#0e0e0e,#1d1d1d)', fg: '#ffffff', ac: '#d7ff3a', ff: "'Unbounded',sans-serif", shape: 'slash' }
+  },
+  {
+    id: 'barber', name: 'Барбершоп', type: 'Сайт + онлайн-запись', logo: 'BRITVA',
+    headline: 'Стрижка, борода, характер', cta: 'Записаться',
+    url: '#', live: false,
+    t: { bg: 'linear-gradient(150deg,#141414,#2a2622)', fg: '#f2ece2', ac: '#c9a25a', ff: "'Oswald',sans-serif", shape: 'pole' }
+  },
+  {
+    id: 'remont', name: 'Ремонт квартир', type: 'Лендинг + калькулятор', logo: 'Ремстрой',
+    headline: 'Ремонт под ключ без нервов', cta: 'Смета',
+    url: '#', live: false,
+    t: { bg: 'linear-gradient(150deg,#f6f5f1,#e9e6de)', fg: '#1b1b1b', ac: '#ff6b1a', ff: "'Onest',sans-serif", shape: 'tiles' }
+  }
+];
+
+/* Шрифты для мини-превью сайтов */
+(function () {
+  var l = document.createElement('link');
+  l.rel = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Playfair+Display:wght@700&family=Manrope:wght@700&family=Unbounded:wght@700&family=Oswald:wght@600&family=Onest:wght@700&display=swap';
+  document.head.appendChild(l);
+
+  var s = document.createElement('style');
+  s.textContent = [
+    '.pt{container-type:inline-size;position:relative;aspect-ratio:16/10;border-radius:inherit;overflow:hidden;background:var(--bg);color:var(--fg);font-family:var(--ff);isolation:isolate}',
+    '.pt-nav{display:flex;align-items:center;gap:3.2cqw;padding:4.4cqw 5.5cqw 0}',
+    '.pt-nav b{font-size:3.6cqw;font-weight:700;letter-spacing:.02em;margin-right:auto}',
+    '.pt-nav i{width:6cqw;height:.9cqw;border-radius:9px;background:currentColor;opacity:.35}',
+    '.pt-nav span{width:10cqw;height:4cqw;border-radius:99px;background:var(--ac)}',
+    '.pt-body{display:grid;grid-template-columns:1.25fr 1fr;gap:4cqw;align-items:center;padding:6cqw 5.5cqw 0}',
+    '.pt-text small{display:block;font-size:2.5cqw;opacity:.6;margin-bottom:1.6cqw;font-family:system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase}',
+    '.pt-text h4{margin:0;font-size:6.6cqw;line-height:1.02;font-weight:700;letter-spacing:-.01em}',
+    '.pt-text p{height:1cqw;width:80%;border-radius:9px;background:currentColor;opacity:.25;margin:3.2cqw 0 0}',
+    '.pt-text p.s{width:55%;margin-top:1.6cqw}',
+    '.pt-cta{display:inline-block;margin-top:4cqw;padding:1.8cqw 4cqw;border-radius:99px;background:var(--ac);color:#111;font:700 2.6cqw/1 system-ui,sans-serif}',
+    '.pt-art{aspect-ratio:1/1.05;width:100%;position:relative}',
+    '.pt-arch{border-radius:50% 50% 4cqw 4cqw/38% 38% 4cqw 4cqw;background:repeating-linear-gradient(180deg,transparent 0 22%,#00000030 22% 23.5%),linear-gradient(160deg,#c89466,#7a5234);box-shadow:inset 0 0 0 1.4cqw #f6eadb22}',
+    '.pt-cup{border-radius:50%;background:radial-gradient(circle at 50% 50%,#d8a16b 0 26%,#6b3b1c 27% 52%,#f7efe4 53% 64%,transparent 65%),radial-gradient(circle at 50% 50%,#fff 0 70%,transparent 71%);filter:drop-shadow(0 2cqw 2cqw #3b241633)}',
+    '.pt-blob{border-radius:42% 58% 63% 37%/45% 40% 60% 55%;background:linear-gradient(140deg,#7fd7e2,#13a3b5);box-shadow:inset -2cqw -2cqw 5cqw #0e3a4a33}',
+    '.pt-blob:after{content:"";position:absolute;inset:26% 30%;border-radius:40% 40% 46% 46%;background:#fff;opacity:.9}',
+    '.pt-slash{background:linear-gradient(115deg,transparent 0 30%,var(--ac) 30% 52%,transparent 52% 60%,#ffffff22 60% 72%,transparent 72%)}',
+    '.pt-pole{border-radius:6cqw;width:52%;margin:auto;background:repeating-linear-gradient(135deg,#c9a25a 0 9%,#f2ece2 9% 18%,#8b2b22 18% 27%,#f2ece2 27% 36%);box-shadow:inset 0 0 0 1cqw #00000033}',
+    '.pt-tiles{background:conic-gradient(from 90deg at 50% 50%,#ff6b1a 25%,#d9d4c7 0 50%,#1b1b1b 0 75%,#efeadf 0);background-size:50% 50%;border-radius:2cqw}',
+    '.pt-row{position:absolute;left:5.5cqw;right:5.5cqw;bottom:-6cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw}',
+    '.pt-row i{height:12cqw;border-radius:2.4cqw;background:currentColor;opacity:.08}'
+  ].join('');
+  document.head.appendChild(s);
+})();
+
+window.renderThumb = function (p) {
+  var t = p.t;
+  return '<div class="pt" style="--bg:' + t.bg + ';--fg:' + t.fg + ';--ac:' + t.ac + ';--ff:' + t.ff + '">' +
+    '<div class="pt-nav"><b>' + p.logo + '</b><i></i><i></i><i></i><span></span></div>' +
+    '<div class="pt-body"><div class="pt-text"><small>' + p.type + '</small><h4>' + p.headline + '</h4><p></p><p class="s"></p>' +
+    '<span class="pt-cta">' + p.cta + '</span></div><div class="pt-art pt-' + t.shape + '"></div></div>' +
+    '<div class="pt-row"><i></i><i></i><i></i></div></div>';
+};
+
+window.tgLink = function () { return 'https://t.me/' + SITE.telegram; };

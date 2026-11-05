@@ -1,0 +1,7 @@
+.git
+.claude
+README.md
+tools
+deploy/*.sh
+deploy/*.service
+deploy/*.timer
