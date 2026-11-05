@@ -12,8 +12,11 @@
 python -m http.server 5520
 ```
 
-## Деплой
+## Публикация
 
-Порядок: комп → GitHub (`main`) → сервер сам подтягивает изменения.
-Сервер: `root@46.173.26.176`, папка `/opt/portfolio`, контейнер `portfolio`
-(порт 8080), таймер `portfolio-autodeploy` раз в 30 с. Файлы — в `deploy/`.
+Сайт публикуется через GitHub Pages: https://prohorusa75-code.github.io/Portfolio/
+Порядок: правим и проверяем на компе → коммит и пуш в `main` → GitHub сам
+обновляет сайт за 1–2 минуты.
+
+`Dockerfile`, `docker-compose.yml` и `deploy/` — запасной вариант для своего
+сервера (nginx-контейнер + автодеплой), сейчас не используются.
