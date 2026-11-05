@@ -1,5 +1,6 @@
 /* Общие данные для всех вариантов лендинга.
-   Здесь меняем контакты и список сайтов-витрин — все 5 дизайнов подхватят изменения. */
+   Здесь меняем контакты и список сайтов-витрин для главной страницы (index.html).
+   Сайт-витрина с live: true получает пометку «online» и открывается в новой вкладке. */
 
 window.SITE = {
   brand: 'Prohorus',              // заглушка: имя или название студии
@@ -10,12 +11,6 @@ window.SITE = {
 };
 
 window.PROJECTS = [
-  {
-    id: 'mebel', name: 'Мебель на заказ', type: 'Сайт-каталог', logo: 'Мебель',
-    headline: 'Кухни и шкафы по вашим размерам', cta: 'Рассчитать',
-    url: 'http://46.173.26.176', live: true,
-    t: { bg: 'linear-gradient(135deg,#2a1c13,#6b4a2f)', fg: '#f6eadb', ac: '#e8c39e', ff: "'Cormorant Garamond',serif", shape: 'arch' }
-  },
   {
     id: 'coffee', name: 'Кофейня', type: 'Лендинг + меню', logo: 'Зерно',
     headline: 'Кофе, который хочется повторить', cta: 'Меню',
@@ -35,12 +30,6 @@ window.PROJECTS = [
     t: { bg: 'linear-gradient(140deg,#0e0e0e,#1d1d1d)', fg: '#ffffff', ac: '#d7ff3a', ff: "'Unbounded',sans-serif", shape: 'slash' }
   },
   {
-    id: 'barber', name: 'Барбершоп', type: 'Сайт + онлайн-запись', logo: 'BRITVA',
-    headline: 'Стрижка, борода, характер', cta: 'Записаться',
-    url: '#', live: false,
-    t: { bg: 'linear-gradient(150deg,#141414,#2a2622)', fg: '#f2ece2', ac: '#c9a25a', ff: "'Oswald',sans-serif", shape: 'pole' }
-  },
-  {
     id: 'remont', name: 'Ремонт квартир', type: 'Лендинг + калькулятор', logo: 'Ремстрой',
     headline: 'Ремонт под ключ без нервов', cta: 'Смета',
     url: '#', live: false,
@@ -52,7 +41,7 @@ window.PROJECTS = [
 (function () {
   var l = document.createElement('link');
   l.rel = 'stylesheet';
-  l.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Playfair+Display:wght@700&family=Manrope:wght@700&family=Unbounded:wght@700&family=Oswald:wght@600&family=Onest:wght@700&display=swap';
+  l.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Manrope:wght@700&family=Unbounded:wght@700&family=Onest:wght@700&display=swap';
   document.head.appendChild(l);
 
   var s = document.createElement('style');
