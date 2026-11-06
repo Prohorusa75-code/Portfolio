@@ -12,10 +12,10 @@ window.SITE = {
 
 window.PROJECTS = [
   {
-    id: 'coffee', name: 'Кофейня', type: 'Лендинг + меню', logo: 'Зерно',
-    headline: 'Кофе, который хочется повторить', cta: 'Меню',
-    url: '#', live: false,
-    t: { bg: 'linear-gradient(160deg,#f4ead9,#e6d3b8)', fg: '#3b2416', ac: '#c0703a', ff: "'Playfair Display',serif", shape: 'cup' }
+    id: 'alleya', name: 'АЛЛЕЯ', type: 'Лендинг-погружение', logo: 'АЛЛЕЯ',
+    headline: 'СЕЗОН ЗАКРЫТ', cta: 'Записаться',
+    url: 'https://prohorusa75-code.github.io/alleya/', live: true, img: 'assets/works/alleya.jpg',
+    t: { bg: '#eaf3f5', fg: '#06232e', ac: '#ff5a1f', ff: "'Sofia Sans Extra Condensed',sans-serif", shape: 'berg' }
   },
   {
     id: 'dental', name: 'Стоматология', type: 'Сайт клиники', logo: 'Дента+',
@@ -41,7 +41,7 @@ window.PROJECTS = [
 (function () {
   var l = document.createElement('link');
   l.rel = 'stylesheet';
-  l.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Manrope:wght@700&family=Unbounded:wght@700&family=Onest:wght@700&display=swap';
+  l.href = 'https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800&family=Manrope:wght@700&family=Unbounded:wght@700&family=Onest:wght@700&display=swap';
   document.head.appendChild(l);
 
   var s = document.createElement('style');
@@ -65,6 +65,7 @@ window.PROJECTS = [
     '.pt-slash{background:linear-gradient(115deg,transparent 0 30%,var(--ac) 30% 52%,transparent 52% 60%,#ffffff22 60% 72%,transparent 72%)}',
     '.pt-pole{border-radius:6cqw;width:52%;margin:auto;background:repeating-linear-gradient(135deg,#c9a25a 0 9%,#f2ece2 9% 18%,#8b2b22 18% 27%,#f2ece2 27% 36%);box-shadow:inset 0 0 0 1cqw #00000033}',
     '.pt-tiles{background:conic-gradient(from 90deg at 50% 50%,#ff6b1a 25%,#d9d4c7 0 50%,#1b1b1b 0 75%,#efeadf 0);background-size:50% 50%;border-radius:2cqw}',
+    '.pt-berg{background:linear-gradient(180deg,#bcdde6 0 40%,#06232e 40% 42%,#145867 42% 70%,#0c3f4e 70%);clip-path:polygon(46% 0,58% 14%,63% 40%,96% 58%,84% 82%,52% 100%,18% 84%,4% 60%,34% 40%,38% 16%)}',
     '.pt-row{position:absolute;left:5.5cqw;right:5.5cqw;bottom:-6cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw}',
     '.pt-row i{height:12cqw;border-radius:2.4cqw;background:currentColor;opacity:.08}'
   ].join('');
@@ -73,6 +74,11 @@ window.PROJECTS = [
 
 window.renderThumb = function (p) {
   var t = p.t;
+  // готовый сайт — показываем настоящий скриншот, заглушку рисуем кодом
+  if (p.img) {
+    return '<div class="pt" style="--bg:' + t.bg + '"><img src="' + p.img + '" alt="Скриншот сайта ' + p.name +
+      '" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top"></div>';
+  }
   return '<div class="pt" style="--bg:' + t.bg + ';--fg:' + t.fg + ';--ac:' + t.ac + ';--ff:' + t.ff + '">' +
     '<div class="pt-nav"><b>' + p.logo + '</b><i></i><i></i><i></i><span></span></div>' +
     '<div class="pt-body"><div class="pt-text"><small>' + p.type + '</small><h4>' + p.headline + '</h4><p></p><p class="s"></p>' +
