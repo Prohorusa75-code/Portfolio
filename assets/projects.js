@@ -28,10 +28,10 @@ window.PROJECTS = [
     t: { bg: '#fff7ee', fg: '#2b1d14', ac: '#c94f2c', ff: "'Manrope',sans-serif", shape: 'blob' }
   },
   {
-    id: 'remont', name: 'Ремонт квартир', type: 'Лендинг + калькулятор', logo: 'Ремстрой',
-    headline: 'Ремонт под ключ без нервов', cta: 'Смета',
-    url: '#', live: false,
-    t: { bg: 'linear-gradient(150deg,#f6f5f1,#e9e6de)', fg: '#1b1b1b', ac: '#ff6b1a', ff: "'Onest',sans-serif", shape: 'tiles' }
+    id: 'remont', name: 'Чистовик', type: 'Ремонт: «до/после» + смета', logo: 'Чистовик',
+    headline: 'Ремонт с ценой, которая не растёт', cta: 'Рассчитать',
+    url: 'https://prohorusa75-code.github.io/remont/', live: true, img: 'assets/works/remont.jpg',
+    t: { bg: '#f3f0e8', fg: '#1c1d1c', ac: '#ff6a1a', ff: "'Onest',sans-serif", shape: 'tiles' }
   }
 ];
 
