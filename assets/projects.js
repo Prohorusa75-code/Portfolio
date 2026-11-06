@@ -3,11 +3,9 @@
    Сайт-витрина с live: true получает пометку «online» и открывается в новой вкладке. */
 
 window.SITE = {
-  brand: 'Prohorus',              // заглушка: имя или название студии
+  brand: 'PROHOR',
   role: 'Веб-разработчик',
-  telegram: 'username',           // ник в Telegram без @
-  email: 'hello@yourdomain.ru',
-  whatsapp: '79000000000'         // номер без + и пробелов
+  telegram: 'prohorsite'          // ник в Telegram без @ — единственный способ связи
 };
 
 window.PROJECTS = [

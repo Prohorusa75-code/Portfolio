@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Prohorus — разработка сайтов под ключ</title>
+<title>PROHOR — разработка сайтов под ключ</title>
 <meta name="description" content="Веб-разработчик: лендинги, сайты-визитки и каталоги для бизнеса. Дизайн, вёрстка и запуск — от идеи до работающего сайта.">
 <meta name="theme-color" content="#0c0c0c">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="Prohorus — разработка сайтов под ключ">
+<meta property="og:title" content="PROHOR — разработка сайтов под ключ">
 <meta property="og:description" content="Лендинги, сайты-визитки и каталоги для бизнеса. Посмотрите витрины проектов.">
 <meta property="og:url" content="https://prohorusa75-code.github.io/Portfolio/">
 <meta property="og:image" content="https://prohorusa75-code.github.io/Portfolio/assets/og.png">
@@ -144,9 +144,15 @@ section.s{padding:clamp(70px,9vw,120px) var(--pad)}
 .nick button{font-size:12px;text-transform:uppercase;border:1.5px solid #000;border-radius:99px;padding:7px 14px;transition:background .2s,color .2s}
 .nick button:hover{background:#000;color:var(--ac)}
 .contact .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.tg-cta{display:flex;align-items:flex-end;justify-content:flex-end;gap:24px}
+.tg-cta .btns{flex-direction:column;align-items:flex-end}
+.qr{display:block;width:clamp(140px,13vw,190px);border-radius:18px;overflow:hidden;border:3px solid #000;transform:rotate(-3deg);transition:transform .45s var(--ease);flex:none}
+.qr:hover{transform:rotate(0) scale(1.05)}
+.qr img{display:block;width:100%;height:auto}
+.qr-note{font-size:13px;text-transform:uppercase;letter-spacing:.04em}
 
 footer{padding:clamp(40px,6vw,70px) var(--pad) 30px;overflow:hidden}
-.wordmark{font-family:'Unbounded';font-weight:900;font-size:15.4vw;line-height:.8;letter-spacing:-.05em;color:var(--bg);-webkit-text-stroke:3px #3a3a37;paint-order:stroke fill;white-space:nowrap;margin:0 0 28px -.04em;transition:-webkit-text-stroke-color .4s}
+.wordmark{font-family:'Unbounded';font-weight:900;font-size:18vw;line-height:.8;letter-spacing:-.05em;color:var(--bg);-webkit-text-stroke:3px #3a3a37;paint-order:stroke fill;white-space:nowrap;margin:0 0 28px -.04em;transition:-webkit-text-stroke-color .4s}
 .wordmark:hover{-webkit-text-stroke-color:var(--ac)}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;font-size:12px;color:var(--mu);text-transform:uppercase}
 .foot div{display:flex;gap:22px;flex-wrap:wrap}
@@ -168,6 +174,7 @@ footer{padding:clamp(40px,6vw,70px) var(--pad) 30px;overflow:hidden}
   .row{grid-template-columns:56px 1fr 40px;gap:8px 14px}.row .ty{grid-column:2}.row .th,.row .ph{grid-column:1/-1;grid-row:3;margin-top:8px}
   .row.yours .ph{min-height:80px}
   .contact .btns{justify-content:flex-start}
+  .tg-cta{justify-content:flex-start}.tg-cta .btns{align-items:stretch;width:100%}.qr,.qr-note{display:none}
   .sticker{position:relative;right:auto;top:auto;margin:-40px 0 16px auto}
 }
 @media (max-width:600px){
@@ -180,16 +187,16 @@ footer{padding:clamp(40px,6vw,70px) var(--pad) 30px;overflow:hidden}
 </head>
 <body>
 <header id="hdr">
-  <a class="logo" href="#top">PROHORUS<sup>®</sup></a>
+  <a class="logo" href="#top">PROHOR<sup>®</sup></a>
   <nav><a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#process">Как работаем</a><a href="#contact">Контакт</a></nav>
   <a class="brk js-tg" target="_blank" rel="noopener">Написать</a>
   <button class="burger brk" id="burger" aria-expanded="false" aria-controls="mnu">Меню</button>
 </header>
 
 <div class="mnu" id="mnu" aria-hidden="true">
-  <div class="top"><span class="logo">PROHORUS<sup>®</sup></span><button class="brk" id="close">Закрыть</button></div>
+  <div class="top"><span class="logo">PROHOR<sup>®</sup></span><button class="brk" id="close">Закрыть</button></div>
   <nav><a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#process">Этапы</a><a href="#contact">Контакт</a></nav>
-  <div class="bot"><a class="js-tg js-nick" target="_blank" rel="noopener"></a><a class="js-mail"></a></div>
+  <div class="bot"><span>Пишите в Telegram</span><a class="js-tg js-nick" target="_blank" rel="noopener"></a></div>
 </div>
 
 <main id="top">
@@ -245,19 +252,22 @@ footer{padding:clamp(40px,6vw,70px) var(--pad) 30px;overflow:hidden}
     <h2 class="rv">Есть идея?<br>Давайте обсудим</h2>
     <div class="grid">
       <div class="rv">
-        <p>Напишите пару слов о бизнесе — предложу решение, сроки и стоимость.</p>
+        <p>Напишите в Telegram пару слов о бизнесе — предложу решение, сроки и стоимость. Обсуждаю проекты только там.</p>
         <div class="nick"><a class="js-tg js-nick" target="_blank" rel="noopener"></a><button id="copy">Скопировать</button></div>
       </div>
-      <div class="btns rv" style="--d:.1s"><a class="btn dark js-tg" target="_blank" rel="noopener">Telegram ↗</a><a class="btn out js-mailbtn">Почта</a></div>
+      <div class="tg-cta rv" style="--d:.1s">
+        <a class="qr js-tg" target="_blank" rel="noopener" aria-label="QR-код: открыть Telegram @prohorsite"><img src="assets/telegram-qr.png" alt="QR-код Telegram @prohorsite" width="466" height="501" loading="lazy"></a>
+        <div class="btns"><span class="qr-note">Наведите камеру телефона на код</span><a class="btn dark js-tg" target="_blank" rel="noopener">Написать в Telegram ↗</a></div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wordmark" aria-hidden="true">PROHORUS</div>
+  <div class="wordmark" aria-hidden="true">PROHOR</div>
   <div class="foot">
-    <span>© <span id="yr"></span> Prohorus — сайты под ключ</span>
-    <div><a class="js-tg" target="_blank" rel="noopener">Telegram</a><a class="js-mail"></a><a href="#top">Наверх ↑</a></div>
+    <span>© <span id="yr"></span> PROHOR — сайты под ключ</span>
+    <div><a class="js-tg js-nick" target="_blank" rel="noopener"></a><a href="#top">Наверх ↑</a></div>
   </div>
 </footer>
 <div class="cur" id="cur" aria-hidden="true"></div>
@@ -266,8 +276,6 @@ footer{padding:clamp(40px,6vw,70px) var(--pad) 30px;overflow:hidden}
 /* контакты из assets/projects.js */
 document.querySelectorAll('.js-tg').forEach(a=>a.href=tgLink());
 document.querySelectorAll('.js-nick').forEach(a=>a.textContent='@'+SITE.telegram);
-document.querySelectorAll('.js-mail').forEach(a=>{a.textContent=SITE.email;a.href='mailto:'+SITE.email});
-document.querySelector('.js-mailbtn').href='mailto:'+SITE.email;
 document.getElementById('yr').textContent=new Date().getFullYear();
 document.getElementById('copy').onclick=e=>{const b=e.currentTarget;navigator.clipboard&&navigator.clipboard.writeText('@'+SITE.telegram);b.textContent='Скопировано ✓';setTimeout(()=>b.textContent='Скопировать',1600)};
 

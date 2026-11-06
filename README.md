@@ -1,8 +1,9 @@
-# Portfolio — сайт-портфолио Prohorus
+# Portfolio — сайт-портфолио PROHOR
 
 Главная страница (`index.html`): кто я, витрины сайтов, контакты.
 
-- Контакты и список сайтов-витрин — `assets/projects.js`.
+- Контакт (только Telegram @prohorsite) и список сайтов-витрин — `assets/projects.js`.
+- QR-код Telegram — `assets/telegram-qr.png`.
 - Картинка для соцсетей — `assets/og.png`, исходник и команда пересборки в `tools/`.
 - `designs/` — 5 вариантов дизайна (выбран 5-й), доступны на сайте по адресу `/designs/`.
 
