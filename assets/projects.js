@@ -18,10 +18,10 @@ window.PROJECTS = [
     t: { bg: '#eaf3f5', fg: '#06232e', ac: '#ff5a1f', ff: "'Sofia Sans Extra Condensed',sans-serif", shape: 'berg' }
   },
   {
-    id: 'dental', name: 'Стоматология', type: 'Сайт клиники', logo: 'Дента+',
-    headline: 'Улыбка без страха и боли', cta: 'Записаться',
-    url: '#', live: false,
-    t: { bg: 'linear-gradient(150deg,#effafc,#d4eef3)', fg: '#0e3a4a', ac: '#13a3b5', ff: "'Manrope',sans-serif", shape: 'blob' }
+    id: 'glad', name: 'Гладь', type: 'Химчистка: калькулятор + заявка', logo: 'гладь*',
+    headline: 'Гладь.', cta: 'Вызвать курьера',
+    url: 'https://prohorusa75-code.github.io/glad/', live: true, img: 'assets/works/glad.jpg',
+    t: { bg: '#050608', fg: '#edeef2', ac: '#ffffff', ff: "'Manrope',sans-serif", shape: 'blob' }
   },
   {
     id: 'fitness', name: 'Фитнес-студия', type: 'Лендинг', logo: 'PULSE',
