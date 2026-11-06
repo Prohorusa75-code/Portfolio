@@ -24,10 +24,10 @@ window.PROJECTS = [
     t: { bg: '#050608', fg: '#edeef2', ac: '#ffffff', ff: "'Manrope',sans-serif", shape: 'blob' }
   },
   {
-    id: 'fitness', name: 'Фитнес-студия', type: 'Лендинг', logo: 'PULSE',
-    headline: 'Тренируйся с удовольствием', cta: 'Пробное',
-    url: '#', live: false,
-    t: { bg: 'linear-gradient(140deg,#0e0e0e,#1d1d1d)', fg: '#ffffff', ac: '#d7ff3a', ff: "'Unbounded',sans-serif", shape: 'slash' }
+    id: 'vet', name: 'Лапа', type: 'Ветклиника: врачи + запись', logo: 'Лапа',
+    headline: 'Здесь лечат с любовью', cta: 'Записаться',
+    url: 'https://prohorusa75-code.github.io/vet/', live: true, img: 'assets/works/vet.jpg',
+    t: { bg: '#fff7ee', fg: '#2b1d14', ac: '#c94f2c', ff: "'Manrope',sans-serif", shape: 'blob' }
   },
   {
     id: 'remont', name: 'Ремонт квартир', type: 'Лендинг + калькулятор', logo: 'Ремстрой',
