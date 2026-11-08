@@ -36,7 +36,7 @@ window.PROJECTS = [
   {
     id: 'chrome', name: 'CHROME', type: 'Автосервис: смета + запись', logo: 'CHROME',
     headline: 'Сервис уровня вашего автомобиля', cta: 'Записаться',
-    url: 'https://prohorusa75-code.github.io/chrome/', live: true, img: 'assets/works/chrome.jpg',
+    url: 'https://prohorusa75-code.github.io/chrome/', live: true, img: 'assets/works/chrome.jpg?v=2',
     t: { bg: '#08080a', fg: '#ededf0', ac: '#f4f4f6', ff: "'Manrope',sans-serif", shape: 'blob' }
   }
 ];
