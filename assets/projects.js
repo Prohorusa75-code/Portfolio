@@ -10,10 +10,10 @@ window.SITE = {
 
 window.PROJECTS = [
   {
-    id: 'alleya', name: 'АЛЛЕЯ', type: 'Лендинг-погружение', logo: 'АЛЛЕЯ',
-    headline: 'СЕЗОН ЗАКРЫТ', cta: 'Записаться',
-    url: 'https://prohorusa75-code.github.io/alleya/', live: true, img: 'assets/works/alleya.jpg',
-    t: { bg: '#eaf3f5', fg: '#06232e', ac: '#ff5a1f', ff: "'Sofia Sans Extra Condensed',sans-serif", shape: 'berg' }
+    id: 'chrome', name: 'CHROME', type: 'Автосервис: смета + запись', logo: 'CHROME',
+    headline: 'Сервис уровня вашего автомобиля', cta: 'Записаться',
+    url: 'https://prohorusa75-code.github.io/chrome/', live: true, img: 'assets/works/chrome.jpg?v=2',
+    t: { bg: '#08080a', fg: '#ededf0', ac: '#f4f4f6', ff: "'Manrope',sans-serif", shape: 'blob' }
   },
   {
     id: 'glad', name: 'Гладь', type: 'Химчистка: калькулятор + заявка', logo: 'гладь*',
@@ -34,10 +34,10 @@ window.PROJECTS = [
     t: { bg: '#f3f0e8', fg: '#1c1d1c', ac: '#ff6a1a', ff: "'Onest',sans-serif", shape: 'tiles' }
   },
   {
-    id: 'chrome', name: 'CHROME', type: 'Автосервис: смета + запись', logo: 'CHROME',
-    headline: 'Сервис уровня вашего автомобиля', cta: 'Записаться',
-    url: 'https://prohorusa75-code.github.io/chrome/', live: true, img: 'assets/works/chrome.jpg?v=2',
-    t: { bg: '#08080a', fg: '#ededf0', ac: '#f4f4f6', ff: "'Manrope',sans-serif", shape: 'blob' }
+    id: 'alleya', name: 'АЛЛЕЯ', type: 'Лендинг-погружение', logo: 'АЛЛЕЯ',
+    headline: 'СЕЗОН ЗАКРЫТ', cta: 'Записаться',
+    url: 'https://prohorusa75-code.github.io/alleya/', live: true, img: 'assets/works/alleya.jpg',
+    t: { bg: '#eaf3f5', fg: '#06232e', ac: '#ff5a1f', ff: "'Sofia Sans Extra Condensed',sans-serif", shape: 'berg' }
   }
 ];
 
